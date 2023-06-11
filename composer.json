@@ -4,7 +4,8 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Mangosteen\\Database\\": "src/app/"
+            "Mangosteen\\Database\\": "src/app/",
+            "Mangosteen\\Seeders\\": "src/database/seeders/"
         }
     },
     "authors": [
