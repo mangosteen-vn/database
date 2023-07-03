@@ -11,11 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('collection', function (Blueprint $table) {
+        Schema::create('collections', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('type');
             $table->timestamps();
         });
+
+        DB::table('collections')->insert([
+            ['name' => 'Sản phẩm hot', 'type' => 'hot'],
+            ['name' => 'Sản phẩm bán chạy', 'type' => 'best-selling'],
+            ['name' => 'Sản phẩm giảm giá', 'type' => 'discounted'],
+        ]);
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('collection');
+        Schema::dropIfExists('collections');
     }
 };
