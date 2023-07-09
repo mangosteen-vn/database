@@ -13,7 +13,7 @@ return new class extends Migration
 
             $table->string('name', 255)->unique();
             $table->string('slug', 255);
-
+            $table->string('type', 255);
             $table->timestamps();
         });
 
