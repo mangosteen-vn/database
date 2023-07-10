@@ -14,6 +14,8 @@ return new class extends Migration
             $table->string('name', 255)->unique();
             $table->string('slug', 255);
             $table->string('type', 255);
+            $table->string('thumbnail')->nullable();
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
 
@@ -26,6 +28,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('taggables');
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('tag');
     }
 };
