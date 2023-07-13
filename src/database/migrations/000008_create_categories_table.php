@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->longText('description')->nullable();
 
-            $table->bigInteger('parent_id');
+            $table->bigInteger('parent_id')->default(0);
             $table->timestamps();
         });
 
